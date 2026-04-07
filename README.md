@@ -69,7 +69,7 @@ POST /chat
 ![Home](assets/home.png)
 ![Upload](assets/upload.png)
 ![Chat](assets/chat.png)
-![Output](output.png)
+![Output](assets/output.png)
 
 ---
 
