@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RAG AI Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/static/css/base.css"/>
+<link rel="stylesheet" href="/static/css/nav.css"/>
+<link rel="stylesheet" href="/static/css/components.css"/>
+<link rel="stylesheet" href="/static/css/home.css"/>
+<link rel="stylesheet" href="/static/css/upload.css"/>
+<link rel="stylesheet" href="/static/css/chat.css"/>
+<link rel="stylesheet" href="/static/css/docs.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-logo">
+      <div class="logo-icon">🧠</div>
+      <span>RAG Assistant</span>
+    </div>
+    <div class="nav-links">
+      <button class="nav-link active" data-page="home">Home</button>
+      <button class="nav-link" data-page="upload">Upload</button>
+      <button class="nav-link" data-page="chat">Chat</button>
+      <button class="nav-link" data-page="docs">My Docs</button>
+    </div>
+    <div class="status-pill">
+      <div class="status-dot" id="statusDot"></div>
+      <span id="statusText">Connecting...</span>
+    </div>
+  </nav>
+
+  <!-- PAGES -->
+  <main>
+    <div class="page active" id="page-home"></div>
+    <div class="page" id="page-upload"></div>
+    <div class="page" id="page-chat"></div>
+    <div class="page" id="page-docs"></div>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- Page templates loaded via JS -->
+  <script src="/static/js/store.js"></script>
+<script src="/static/js/api.js"></script>
+<script src="/static/js/router.js"></script>
+<script src="/static/js/pages/home.js"></script>
+<script src="/static/js/pages/upload.js"></script>
+<script src="/static/js/pages/chat.js"></script>
+<script src="/static/js/pages/docs.js"></script>
+<script src="/static/js/app.js"></script>
+</body>
+</html>
