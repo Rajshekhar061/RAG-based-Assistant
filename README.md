@@ -64,7 +64,12 @@ POST /chat
 
 ## 📸 Screenshots
 
-(Add screenshots here after testing)
+## 📸 Screenshots
+
+![Home](assets/home.png)
+![Upload](assets/upload.png)
+![Chat](assets/chat.png)
+![Output](output.png)
 
 ---
 
