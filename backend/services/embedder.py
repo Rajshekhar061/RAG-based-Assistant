@@ -1,7 +1,7 @@
 from typing import List
 import numpy as np
 from sentence_transformers import SentenceTransformer
-from config import EMBEDDING_MODEL
+from ..config import EMBEDDING_MODEL
 
 
 class Embedder:

@@ -5,7 +5,7 @@ from typing import List
 import faiss
 import numpy as np
 
-from config import FAISS_INDEX_DIR
+from ..config import FAISS_INDEX_DIR
 
 
 class VectorStore:

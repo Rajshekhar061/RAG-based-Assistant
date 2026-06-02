@@ -1,10 +1,10 @@
 from fastapi import APIRouter, HTTPException, status
 
-from config import TOP_K_RESULTS
-from models.schemas import ChatRequest, ChatResponse
-from services.embedder import get_embeddings
-from services.llm import get_answer
-from services.vector_store import VectorStore
+from ..config import TOP_K_RESULTS
+from ..models.schemas import ChatRequest, ChatResponse
+from ..services.embedder import get_embeddings
+from ..services.llm import get_answer
+from ..services.vector_store import VectorStore
 
 router = APIRouter()
 

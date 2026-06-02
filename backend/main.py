@@ -4,8 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
-from routes.chat import router as chat_router
-from routes.upload import router as upload_router
+from backend.routes.chat import router as chat_router
+from backend.routes.upload import router as upload_router
 
 app = FastAPI(title="RAG AI Assistant")
 

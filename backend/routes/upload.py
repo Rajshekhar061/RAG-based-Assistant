@@ -3,11 +3,11 @@ from uuid import uuid4
 
 from fastapi import APIRouter, File, HTTPException, UploadFile, status
 
-from config import CHUNK_SIZE, CHUNK_OVERLAP, UPLOAD_DIR
-from models.schemas import UploadResponse
-from services.embedder import get_embeddings
-from services.pdf_parser import chunk_text, extract_text_from_pdf
-from services.vector_store import VectorStore
+from ..config import CHUNK_SIZE, CHUNK_OVERLAP, UPLOAD_DIR
+from ..models.schemas import UploadResponse
+from ..services.embedder import get_embeddings
+from ..services.pdf_parser import chunk_text, extract_text_from_pdf
+from ..services.vector_store import VectorStore
 
 router = APIRouter()
 
