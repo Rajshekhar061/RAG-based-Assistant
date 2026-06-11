@@ -1,52 +1,162 @@
-# 🤖 RAG AI Assistant
+# 📚 RAG AI Assistant
 
-A Retrieval-Augmented Generation (RAG) based AI assistant that answers user queries using uploaded documents. Built using FastAPI, Sentence Transformers, and Groq LLM API.
+### Retrieval-Augmented Generation (RAG) System for Document Question Answering
+
+A full-stack AI assistant that allows users to upload documents and ask questions in natural language. The system retrieves relevant information from uploaded content using semantic search and generates context-aware responses through a Large Language Model.
+
+Built with FastAPI, Sentence Transformers, PostgreSQL, and Groq-powered LLMs.
+
+---
+
+## 🎯 Problem Statement
+
+Traditional LLMs cannot access user-specific documents and often generate responses without relevant context.
+
+This project solves that problem by implementing a Retrieval-Augmented Generation (RAG) pipeline that retrieves relevant information from uploaded documents before generating responses, resulting in more accurate and context-aware answers.
 
 ---
 
 ## 🚀 Features
 
-* 📄 Upload documents (PDF/Text)
-* 🔍 Semantic search using embeddings
-* 🧠 Context-aware AI responses
-* ⚡ FastAPI backend for high performance
-* 🤖 Powered by LLM (Groq API)
-* 📦 Lightweight and scalable architecture
+### 📄 Document Upload & Processing
+
+* Upload PDF documents
+* Automated text extraction
+* Intelligent document chunking
+* Embedding generation pipeline
+
+### 🔍 Semantic Retrieval
+
+* Vector-based similarity search
+* Context retrieval using embeddings
+* Relevant document chunk selection
+* Query-aware retrieval workflow
+
+### 🤖 AI-Powered Question Answering
+
+* Natural language querying
+* Context-aware responses
+* Reduced hallucinations through retrieval
+* Groq-powered LLM inference
+
+### ⚡ Backend Architecture
+
+* FastAPI-based REST API
+* Modular service architecture
+* Decoupled ingestion and retrieval pipelines
+* Scalable backend design
+
+---
+
+## 📸 Screenshots
+
+
+
+![Home](assets/home.png)
+
+![Upload](assets/upload.png)
+
+![Chat](assets/chat.png)
+
+![Output](assets/output.png)
+
+---
+
+## 🏗️ System Architecture
+
+```text
+User Uploads Document
+          │
+          ▼
+Text Extraction
+          │
+          ▼
+Document Chunking
+          │
+          ▼
+Embedding Generation
+(Sentence Transformers)
+          │
+          ▼
+Embedding Storage
+          │
+          ▼
+User Query
+          │
+          ▼
+Query Embedding
+          │
+          ▼
+Similarity Search
+          │
+          ▼
+Relevant Context Retrieval
+          │
+          ▼
+Groq LLM (LLaMA 3.1)
+          │
+          ▼
+Final Response
+```
 
 ---
 
 ## 🛠️ Tech Stack
 
-* **Backend:** FastAPI
-* **Embeddings:** Sentence Transformers (`all-MiniLM-L6-v2`)
-* **LLM:** Groq API (LLaMA 3.1)
-* **Language:** Python
+### Backend
+
+* FastAPI
+* Python
+
+### AI & Retrieval
+
+* Sentence Transformers
+* all-MiniLM-L6-v2
+* Retrieval-Augmented Generation (RAG)
+
+### LLM
+
+* Groq API
+* LLaMA 3.1
+
+### Database
+
+* PostgreSQL
+
+### Tools
+
+* Git
+* GitHub
 
 ---
 
-## 🧠 How It Works (Architecture)
+## 🧠 RAG Pipeline
 
-User Query
-→ Embedding Model
-→ Vector Similarity Search
-→ Relevant Context Retrieval
-→ LLM (Groq)
-→ Final Response
+### Step 1: Document Ingestion
 
----
+* Upload PDF documents
+* Extract raw text
+* Split into manageable chunks
 
-## ⚙️ Setup Instructions
+### Step 2: Embedding Generation
 
-```bash
-git clone https://github.com/Rajshekhar061/your-repo-name.git
-cd your-repo-name
+* Generate dense vector embeddings using Sentence Transformers
+* Convert textual information into semantic representations
 
-python -m venv venv
-venv\Scripts\activate   # Windows
+### Step 3: Similarity Search
 
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
+* Convert user query into embedding
+* Retrieve top-k most relevant document chunks
+
+### Step 4: Context Augmentation
+
+* Inject retrieved context into the prompt
+* Send enriched prompt to LLM
+
+### Step 5: Response Generation
+
+* Groq-powered LLaMA model generates final answer
+* Responses are grounded in retrieved document content
 
 ---
 
@@ -54,41 +164,74 @@ uvicorn main:app --reload
 
 ### Upload Document
 
+```http
 POST /upload
+```
 
-### Chat with AI
+Uploads and processes documents for retrieval.
 
+### Chat With Assistant
+
+```http
 POST /chat
+```
+
+Returns context-aware responses based on uploaded documents.
 
 ---
 
-## 📸 Screenshots
+## 🔒 Engineering Considerations
 
-## 📸 Screenshots
-
-![Home](assets/home.png)
-![Upload](assets/upload.png)
-![Chat](assets/chat.png)
-![Output](assets/output.png)
-
----
-
-## 🌐 Demo
-
-(Add deployed link here)
+* Modular service architecture
+* Separation of ingestion and retrieval pipelines
+* Efficient embedding generation workflow
+* Reduced hallucination through context grounding
+* Scalable API-first design
 
 ---
 
 ## 💡 Future Improvements
 
-* 🧠 Chat memory (conversation history)
-* ⚡ Streaming responses
-* 📚 Multi-document support with vector DB (FAISS/Chroma)
-* 🌍 Deployment with cloud services
+* Conversation Memory
+* Streaming Responses
+* FAISS / Chroma Integration
+* Multi-Document Collections
+* Hybrid Search (Keyword + Semantic)
+* Authentication System
+* Docker Deployment
+* Cloud Infrastructure (AWS/GCP)
+
+---
+
+## 📚 Skills Demonstrated
+
+* FastAPI Development
+* REST API Design
+* Retrieval-Augmented Generation
+* Vector Search
+* Embedding Models
+* LLM Integration
+* Prompt Engineering
+* Backend Architecture
+* Database Design
+* AI System Development
 
 ---
 
 ## 👨‍💻 Author
 
-Rajshekhar Singh
-GitHub: https://github.com/Rajshekhar061
+**Rajshekhar Singh**
+
+* GitHub: https://github.com/Rajshekhar061
+* Portfolio: https://my-portfolio-9wb7.onrender.com
+* LinkedIn: https://www.linkedin.com/in/rajshekhar-singh-572574276
+
+---
+
+## ⭐ Support
+
+If you found this project useful:
+
+* ⭐ Star the repository
+* 🍴 Fork the repository
+* 💬 Share feedback
